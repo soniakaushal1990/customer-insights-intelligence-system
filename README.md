@@ -74,5 +74,44 @@ while keeping outputs tied to real customer data instead of unsupported assumpti
 
 ---
 
-## 🔍 Example Insight Prompt (early draft)
+
+
+## 📝 Status & Roadmap
+
+This roadmap reflects how the project will grow from basic customer segmentation into a practical
+retrieval-augmented insights system, with grounding and evaluation as core priorities.
+
+### Phase 1 — Foundations
+- [x] Create repository and README
+- [ ] Add TypeScript / Node.js backend scaffolding
+- [ ] Connect to MongoDB and load sample data
+
+### Phase 2 — Segmentation & Metrics
+- [ ] Define sample customer + event datasets
+- [ ] Compute basic features (LTV, activity, recency, tenure)
+- [ ] Implement rule-based segmentation (e.g., high-value, at-risk, low-engagement)
+- [ ] Expose `GET /segments` to view metrics only
+
+### Phase 3 — Retrieval & Embeddings (RAG)
+- [ ] Create small notes corpus for retrieval context
+- [ ] Generate embeddings for notes (OpenAI embeddings)
+- [ ] Store embeddings in MongoDB / Atlas Vector Search
+- [ ] Implement retrieval service to fetch relevant notes per segment
+
+### Phase 4 — Insight Generation (LLM Layer)
+- [ ] Design prompt template combining metrics + retrieved context
+- [ ] Integrate LLM to generate grounded segment insights
+- [ ] Store insights with metadata (context used, timestamp)
+- [ ] Expose `GET /segments/:id` to return segment + insight
+
+### Phase 5 — Evaluation & Groundedness
+- [ ] Add basic evaluation checks (referencing metrics/context)
+- [ ] Flag potential hallucinations or unsupported claims
+- [ ] Log evaluation output for refinement
+
+### Phase 6 — Developer Experience
+- [ ] Add Docker setup for backend + MongoDB
+- [ ] Add GitHub Actions workflow (install, lint, test, build)
+- [ ] Write short “Design & Tradeoffs” note in README
+
 
